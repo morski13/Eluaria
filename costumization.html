@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Customization</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="character.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Leva strana: Character Customization -->
+        <div class="customization-section">
+            <h1>Character Customization</h1>
+            <!-- Dodajemo okvir za slike likova -->
+            <div class="character-frame">
+                <div class="character-preview" id="characterPreview">
+                    <img id="characterImage" src="images/default_character.png" alt="Character Preview">
+                </div>
+            </div>
+
+            <div class="options">
+                <h2>Choose Your Family</h2>
+
+                <!-- Family Selection -->
+                <div class="option">
+                    <label for="family">Choose Family:</label>
+                    <select id="family">
+                        <option value="alderians">The Alderians</option>
+                        <option value="ignishearts">The Ignishearts</option>
+                        <option value="stonewells">The Stonewells</option>
+                        <option value="deepwaters">The Deepwaters</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desna strana: Attributes -->
+        <div class="attributes-section">
+            <h2>Attributes</h2>
+            <div id="attributeDisplay"></div> <!-- Atributi će se prikazati ovde -->
+
+            <!-- Health Bar -->
+            <div class="health-bar">
+                <label>Health:</label>
+                <div style="margin-bottom: 5px;">
+                    <span id="healthText">100</span> <!-- Vrednost zdravlja -->
+                </div>
+                <div class="health-meter" id="healthMeter" style="width: 100%;"></div>
+            </div>
+
+            <!-- Mana Bar -->
+            <div class="mana-bar">
+                <label>Mana:</label>
+                <div style="margin-bottom: 5px;">
+                    <span id="manaText">100</span> <!-- Vrednost mane -->
+                </div>
+                <div class="mana-meter" id="manaMeter" style="width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="game.js"></script>
+</body>
+</html>
