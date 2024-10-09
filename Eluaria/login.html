@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eluaria's Quest for Harmony - Login</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dodajemo audio tag za pozadinsku muziku -->
+    <audio id="backgroundMusic" loop>
+        <source src="zvukovi/fire-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Dugme za zvuk u gornjem desnom uglu -->
+    <button id="playMusic" class="sound-button">
+        <img id="soundIcon" src="ikone/sound-off-8bit.png" alt="Sound Icon" class="sound-icon">
+    </button>
+
+    <div class="container">
+        <div class="login-box">
+            <h1>Eluaria's Quest for Harmony</h1>
+            <h2>Login to Begin Your Journey</h2>
+            <form id="loginForm" action="login.php" method="post"> <!-- Povezivanje sa login.php -->
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p id="errorMessage" class="error-message"></p>
+            <p>Don't have an account? <a href="register.html">Register here</a></p> <!-- Link za registraciju -->
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
