@@ -1,37 +1,57 @@
-// Funkcija za reprodukciju muzike kada se dugme pritisne
-document.getElementById('playMusic').addEventListener('click', function() {
-    const backgroundMusic = document.getElementById('backgroundMusic');
-    const soundIcon = document.getElementById('soundIcon');
+// Kontrola zvuka
+const backgroundMusic = document.getElementById('backgroundMusic');
+const playMusicButton = document.getElementById('playMusic');
+const soundIcon = document.getElementById('soundIcon');
 
-    // Proveri da li je muzika već puštena
-    if (backgroundMusic.paused) {
-        backgroundMusic.play().catch(error => {
-            console.log("Playback failed: ", error);
-        });
-        // Promeni ikonu na zvuk uključen
-        soundIcon.src = "ikone/sound-on-8bit.png"; // Putanja do slike zvuka uključen
-    } else {
+let isPlaying = false;
+
+// Funkcija za prebacivanje zvuka
+playMusicButton.addEventListener('click', () => {
+    if (isPlaying) {
         backgroundMusic.pause();
-        // Promeni ikonu na zvuk isključen
-        soundIcon.src = "ikone/sound-off-8bit.png"; // Putanja do slike zvuka isključen
+        soundIcon.src = 'ikone/sound-off-8bit.png'; // Promena ikone na isključeno
+    } else {
+        backgroundMusic.play();
+        soundIcon.src = 'ikone/sound-on-8bit.png'; // Promena ikone na uključeno
     }
+    isPlaying = !isPlaying;
 });
 
-// Dodaj event listener za formu
+// Validacija forme za login
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Sprečava podnošenje forme
-
-    // Dohvati vrednosti unetih podataka
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Provera unosa (možeš dodati svoju logiku za autentifikaciju)
-    if (username === 'player1' && password === 'tadija123') {
-        // Preusmeri na stranicu za personalizaciju
-        window.location.href = 'costumization.html'; // Putanja do customization.html
+    if (username === '' || password === '') {
+        event.preventDefault(); // Spreči slanje forme
+        document.getElementById('errorMessage').innerText = 'Please fill in all fields.'; // Prikaz poruke o grešci
     } else {
-        // Prikazi poruku o grešci
-        document.getElementById('errorMessage').textContent = 'Invalid username or password!';
+        // Kada se forma validira, preusmeravanje će biti na login.php
+        this.action = 'login.php';
     }
 });
 
+// Validacija forme za registraciju
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === '' || password === '') {
+        event.preventDefault(); // Spreči slanje forme
+        document.getElementById('errorMessage').innerText = 'Please fill in all fields.'; // Prikaz poruke o grešci
+    } else {
+        // Kada se forma validira, preusmeravanje će biti na register.php
+        this.action = 'register.php';
+    }
+});
+
+// Opcionalno: Preusmeravanje na customization.php nakon uspešne prijave/registracije
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('login') && urlParams.get('login') === 'success') {
+        window.location.href = 'costumization.php'; // Preusmerava na customization.php nakon uspešne prijave
+    }
+    if (urlParams.has('register') && urlParams.get('register') === 'success') {
+        window.location.href = 'costumization.php'; // Preusmerava na customization.php nakon uspešne registracije
+    }
+};

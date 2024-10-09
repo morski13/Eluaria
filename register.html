@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eluaria's Quest for Harmony - Login</title>
+    <title>Eluaria's Quest for Harmony - Register</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
@@ -12,22 +12,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Dodajemo audio tag za pozadinsku muziku -->
-    <audio id="backgroundMusic" loop>
-        <source src="zvukovi/fire-1.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <!-- Dugme za zvuk u gornjem desnom uglu -->
-    <button id="playMusic" class="sound-button">
-        <img id="soundIcon" src="ikone/sound-off-8bit.png" alt="Sound Icon" class="sound-icon">
-    </button>
-
     <div class="container">
-        <div class="login-box">
+        <div class="register-box">
             <h1>Eluaria's Quest for Harmony</h1>
-            <h2>Login to Begin Your Journey</h2>
-            <form id="loginForm" action="login.php" method="post"> <!-- Povezivanje sa login.php -->
+            <h2>Register to Start Your Adventure</h2>
+            <form id="registerForm" action="register.php" method="post"> <!-- Povezivanje sa register.php -->
                 <div class="input-group">
                     <label for="username">Username:</label>
                     <div class="input-icon">
@@ -42,10 +31,10 @@
                         <input type="password" id="password" name="password" required>
                     </div>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit">Register</button>
             </form>
             <p id="errorMessage" class="error-message"></p>
-            <p>Don't have an account? <a href="register.html">Register here</a></p> <!-- Link za registraciju -->
+            <p>Already have an account? <a href="login.html">Login here</a></p> <!-- Link za prijavu -->
         </div>
     </div>
 

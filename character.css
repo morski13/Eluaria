@@ -10,7 +10,6 @@ body {
     background: url('pozadina/rpg-8bit.gif') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
-    overflow: hidden;
 }
 
 /* Glavni kontejner za podelu na levu i desnu stranu */
@@ -23,14 +22,15 @@ body {
 }
 
 /* Leva strana: Character Customization */
-.customization-section {
+.welcome-section {
     flex: 1;
     margin-right: 20px;
+    text-align: center; /* Centriranje teksta */
 }
 
-.customization-section h1, .customization-section h2 {
+.welcome-section h1, .welcome-section h2 {
     color: #ffeb3b;
-    font-size: 20px;
+    font-size: 24px; /* Povećana veličina naslova */
 }
 
 .character-frame {
@@ -40,9 +40,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;   /* Širina okvira */
-    height: 300px;  /* Visina okvira */
-    margin-bottom: 20px;
+    width: 250px;   /* Povećana širina okvira */
+    height: 350px;  /* Povećana visina okvira */
+    margin: 20px auto; /* Centriranje okvira */
 }
 
 .character-preview img {
@@ -51,6 +51,7 @@ body {
     object-fit: contain; /* Održava proporcije slike unutar okvira */
 }
 
+/* Opcije */
 .options {
     margin-top: 20px;
 }
@@ -83,7 +84,7 @@ select {
 
 .attributes-section h2 {
     color: #ffeb3b;
-    font-size: 20px;
+    font-size: 24px; /* Povećana veličina naslova */
 }
 
 /* Health Bar */
@@ -107,7 +108,6 @@ select {
     transition: width 0.5s;
 }
 
-
 /* Stilizacija za mobilne uređaje */
 @media (max-width: 600px) {
     .container {
@@ -115,7 +115,7 @@ select {
         align-items: center; /* Centriranje sadržaja */
     }
 
-    .customization-section, .attributes-section {
+    .welcome-section, .attributes-section {
         width: 100%; /* Širina 100% na manjim ekranima */
         margin-right: 0;
         margin-left: 0;
