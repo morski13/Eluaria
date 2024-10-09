@@ -1,0 +1,153 @@
+/* Glavni stilovi tela stranice */
+body {
+    font-family: 'Press Start 2P', cursive; /* 8-bit stil */
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* Da se izbegne scrollbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centriranje sadržaja */
+    justify-content: center; /* Centriranje sadržaja */
+    background: url('pozadina/rpg-8bit-ezgif.com-resize.gif') no-repeat center center; /* Postavljanje GIF pozadine */
+    background-size: cover; /* Pokriva celu pozadinu */
+}
+
+/* Stilizacija dugmeta za zvuk */
+.sound-button {
+    position: absolute; /* Pozicija apsoolute */
+    bottom: 20px; /* Razmak od dna */
+    right: 20px; /* Razmak od leve strane */
+    background: #ffeb3b; /* Pozadinska boja dugmeta */
+    border: 2px solid #b3a000; /* Kontura dugmeta */
+    border-radius: 5px; /* Blago zaobljeni ivici */
+    cursor: pointer; /* Ruka pokazivača na hover */
+    outline: none; /* Bez okvira prilikom fokusa */
+    padding: 10px; /* Dodaj padding da se poveća klikabilna zona */
+    width: 60px;
+    height: auto;
+    box-shadow: 0 4px 0 #b3a000, 0 6px 6px rgba(0,0,0,0.5); /* Senka za 3D efekat */
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out; /* Animacija na hover */
+}
+
+/* Stilizacija zvučne slike */
+.sound-icon {
+    width: 40px; /* Veličina slike */
+    height: auto; /* Održavanje proporcija */
+}
+
+/* Stilizacija kontejnera */
+.container {
+    position: relative; /* Održava kontekst za pozicioniranje unutar */
+}
+
+/* Stilizacija login box-a */
+.login-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 100%; /* Postavljanje širinе na 100% */
+    min-width: 300px; /* Minimalna širina za bolje proporcije */
+}
+
+/* Stilizacija naslova */
+h1 {
+    font-size: 24px; /* Smanjena veličina naslova */
+    margin-bottom: 10px;
+    color: #ffeb3b;
+    font-weight: 700;
+}
+
+/* Stilizacija podnaslova */
+h2 {
+    font-size: 16px; /* Smanjena veličina podnaslova */
+    margin-bottom: 20px; /* Smanjen razmak */
+    color: #fff;
+    font-weight: 300;
+}
+
+/* Stilizacija input polja */
+.input-group {
+    margin-bottom: 15px; /* Smanjen razmak između input polja */
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon i {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input {
+    width: calc(100% - 40px); /* Širina sa razmakom za ikonicu */
+    padding: 12px 12px 12px 35px; /* Prostor za ikonicu */
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Animacija kada je input polje fokusirano */
+input:focus {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Stilizacija dugmeta za prijavu */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffeb3b;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover efekt na dugme */
+button:hover {
+    background-color: #fdd835;
+}
+
+/* Poruka o grešci */
+.error-message {
+    color: #ff5252;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Stilizacija za mobilne uređaje */
+@media (max-width: 600px) {
+    .login-box {
+        padding: 20px;
+        max-width: 300px;
+    }
+
+    h1 {
+        font-size: 22px; /* Manja veličina naslova */
+    }
+
+    h2 {
+        font-size: 14px; /* Manja veličina podnaslova */
+    }
+}
