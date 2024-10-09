@@ -1,0 +1,123 @@
+/* Stilizacija za celu stranicu */
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('pozadina/rpg-8bit.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Glavni kontejner za podelu na levu i desnu stranu */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 900px;
+    height: 80%;
+}
+
+/* Leva strana: Character Customization */
+.welcome-section {
+    flex: 1;
+    margin-right: 20px;
+    text-align: center; /* Centriranje teksta */
+}
+
+.welcome-section h1, .welcome-section h2 {
+    color: #ffeb3b;
+    font-size: 24px; /* Povećana veličina naslova */
+}
+
+.character-frame {
+    background-color: #333; /* Tamno siva pozadina */
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;   /* Povećana širina okvira */
+    height: 350px;  /* Povećana visina okvira */
+    margin: 20px auto; /* Centriranje okvira */
+}
+
+.character-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Održava proporcije slike unutar okvira */
+}
+
+/* Opcije */
+.options {
+    margin-top: 20px;
+}
+
+.option {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+select {
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #ffeb3b;
+    background-color: #444;
+    color: #fff;
+    outline: none;
+}
+
+/* Desna strana: Attributes */
+.attributes-section {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.attributes-section h2 {
+    color: #ffeb3b;
+    font-size: 24px; /* Povećana veličina naslova */
+}
+
+/* Health Bar */
+.health-bar, .mana-bar {
+    margin-bottom: 20px;
+}
+
+.health-meter, .mana-meter {
+    height: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.health-meter {
+    background-color: green;
+    transition: width 0.5s;
+}
+
+.mana-meter {
+    background-color: blue;
+    transition: width 0.5s;
+}
+
+/* Stilizacija za mobilne uređaje */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Podela u kolone na manjim ekranima */
+        align-items: center; /* Centriranje sadržaja */
+    }
+
+    .welcome-section, .attributes-section {
+        width: 100%; /* Širina 100% na manjim ekranima */
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
